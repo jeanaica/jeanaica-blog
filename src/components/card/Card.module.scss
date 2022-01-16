@@ -1,0 +1,101 @@
+@import '~styles/color';
+
+.container {
+  display: flex;
+  position: relative;
+  width: 70%;
+  height: 200px;
+  margin-bottom: 5rem;
+
+  &.right {
+    flex-direction: row-reverse;
+  }
+
+  &.both {
+    margin-top: 3rem;
+  }
+}
+
+.image {
+  position: absolute;
+
+  &.highlight {
+    top: -170px;
+  }
+}
+
+.border {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  border: 2px solid $primary;
+  width: 245px;
+  height: 395px;
+
+  &.square {
+    height: 245px;
+  }
+
+  &.right {
+    left: unset;
+    right: 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  z-index: 2;
+  margin-left: 220px;
+  margin-top: 3rem;
+
+  &.right {
+    margin-left: unset;
+    margin-right: 220px;
+  }
+
+  &.highlight {
+    width: 60%;
+  }
+}
+
+.title {
+  background-color: $accent;
+  padding: 8px 16px;
+
+  .header {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.summary {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 3rem;
+
+  .text {
+    width: 100%;
+    color: $secondary;
+    padding: 1rem;
+  }
+
+  .expand {
+    font-style: normal;
+    font-size: 12px;
+  }
+
+  &.right {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+
+  &.both {
+    padding-right: 2rem;
+  }
+}

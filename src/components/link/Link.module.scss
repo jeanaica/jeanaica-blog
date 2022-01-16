@@ -1,0 +1,10 @@
+@import '~styles/color';
+
+.link {
+  color: $secondary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $accent-dark;
+  }
+}

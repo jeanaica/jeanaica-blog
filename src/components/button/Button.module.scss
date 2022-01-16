@@ -1,0 +1,17 @@
+@import '~styles/color';
+
+.button {
+  background: $white 0% 0% no-repeat none;
+  border: 2px solid $primary;
+  padding: 15px #{'min(50px, 15%)'};
+  cursor: pointer;
+  box-shadow: none;
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $primary;
+    color: $white;
+  }
+}

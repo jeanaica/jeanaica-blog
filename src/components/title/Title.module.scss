@@ -1,0 +1,52 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.container {
+  background-color: $white;
+  width: 100%;
+  padding: 1rem 0 3rem;
+
+  @include sm-and-up {
+    padding: 12px;
+
+    &.normal {
+      width: 50%;
+    }
+  }
+}
+
+.content {
+  border: none;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 35px;
+
+  @include sm-and-up {
+    border: 2px solid $accent-dark;
+    height: inherit;
+  }
+
+  .title {
+    color: $accent-dark;
+  }
+
+  .divider {
+    width: 70%;
+    border-color: $secondary;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .subText {
+    line-height: 1.875rem;
+    letter-spacing: 0;
+    color: $secondary;
+  }
+}
+
+.xsall {
+  width: 20%;
+}

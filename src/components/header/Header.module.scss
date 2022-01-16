@@ -1,0 +1,46 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.header {
+  grid-area: header;
+  display: flex;
+  padding: 1rem 2.5rem;
+  background-color: $white;
+  z-index: 2;
+}
+
+.name {
+  flex: 1;
+  text-align: right;
+  order: 2;
+
+  @include lg {
+    order: 1;
+    text-align: left;
+  }
+}
+
+.navigation {
+  flex: 3;
+  order: 1;
+
+  @include lg {
+    order: 2;
+  }
+}
+
+.socials {
+  display: none;
+
+  @include lg {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    order: 3;
+
+    .link {
+      margin-right: 2rem;
+    }
+  }
+}

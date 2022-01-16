@@ -1,0 +1,58 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.about {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  justify-content: center;
+
+  @include portrait {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.content {
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  left: 3rem;
+
+  @include xs {
+    position: relative;
+    order: 2;
+    top: unset;
+    left: unset;
+  }
+}
+
+.text {
+  color: $primary;
+}
+
+.profile {
+  margin-left: 50%;
+
+  @include portrait {
+    width: unset !important;
+    margin-left: 0;
+    transform: translateX(20%);
+
+    :global {
+      img {
+        object-fit: unset;
+      }
+    }
+  }
+
+  @include xs {
+    order: 1;
+    width: 100% !important;
+    height: 100% !important;
+    transform: unset;
+  }
+}

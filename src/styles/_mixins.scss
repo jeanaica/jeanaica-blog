@@ -1,0 +1,51 @@
+@import 'breakpoints';
+
+@mixin xs {
+  @media (max-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (max-width: #{$screen-ipad-portrait}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin sm-and-up {
+  @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  $px: 'px';
+  @media (max-width: '#{$screen} #{$px}') {
+    @content;
+  }
+}

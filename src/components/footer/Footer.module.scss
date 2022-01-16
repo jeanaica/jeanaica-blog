@@ -1,0 +1,64 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  background-color: $accent;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 40px;
+  color: $primary;
+  padding: 1rem;
+  flex-direction: column;
+
+  @include lg {
+    flex-direction: row;
+  }
+
+  > div {
+    flex: 1;
+  }
+
+  .copyright {
+    text-align: center;
+    flex: 3;
+    line-height: 16px;
+
+    @include md {
+      margin-left: 1rem;
+    }
+
+    @include lg {
+      text-align: left;
+      margin-left: 2rem;
+    }
+  }
+
+  .social {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    padding-right: 0;
+
+    .link {
+      margin-right: 1rem;
+    }
+
+    @include md {
+      padding-right: 1rem;
+    }
+
+    @include lg {
+      padding-right: 2rem;
+      text-align: right;
+      font-size: 20px;
+
+      .link {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

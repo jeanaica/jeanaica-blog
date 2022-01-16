@@ -1,0 +1,31 @@
+@import '~styles/color';
+
+.container {
+  &.xl {
+    width: 100%;
+  }
+
+  &.large {
+    width: 70%;
+  }
+
+  &.medium {
+    width: 50%;
+  }
+
+  &.square {
+    width: 250px;
+    height: 250px;
+  }
+
+  &.tall {
+    width: 250px;
+    height: 400px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

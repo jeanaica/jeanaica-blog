@@ -1,0 +1,21 @@
+@import 'typography';
+@import 'mixins';
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  min-width: 320px;
+
+  @include rwd(280) {
+    overflow-x: unset;
+  }
+}
