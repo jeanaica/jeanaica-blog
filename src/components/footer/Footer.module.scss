@@ -14,7 +14,7 @@
   padding: 1rem;
   flex-direction: column;
 
-  @include lg {
+  @include lg-and-up {
     flex-direction: row;
   }
 
@@ -31,7 +31,7 @@
       margin-left: 1rem;
     }
 
-    @include lg {
+    @include lg-and-up {
       text-align: left;
       margin-left: 2rem;
     }
@@ -51,7 +51,7 @@
       padding-right: 1rem;
     }
 
-    @include lg {
+    @include lg-and-up {
       padding-right: 2rem;
       text-align: right;
       font-size: 20px;

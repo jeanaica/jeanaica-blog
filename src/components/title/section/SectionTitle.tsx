@@ -15,11 +15,7 @@ const SectionTitle: FC<Props> = ({
   className,
   ...rest
 }: Props) => (
-  <div
-    className={classnames(className, styles.section)}
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    {...rest}
-  >
+  <div className={classnames(className, styles.section)} {...rest}>
     <h5 className={styles.title}>{text}</h5>
     <div className={styles.accent}>
       <h5 className={styles.highlight}>{highlight}</h5>

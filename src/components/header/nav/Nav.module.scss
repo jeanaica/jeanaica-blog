@@ -1,0 +1,74 @@
+@import '~styles/color';
+
+.nav {
+  //   background-color: $primary;
+  //   padding: 1rem 0;
+  display: flex;
+  grid-area: header;
+}
+
+.nav-button {
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+
+  li {
+    padding-right: 1.5rem;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+}
+
+.title-text {
+  //   color: var(--color-secondary);
+  margin-bottom: 0;
+  letter-spacing: 7px;
+  font-weight: 300;
+  min-width: 150px;
+}
+
+.visible {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.desktop {
+  flex-direction: row-reverse;
+  padding-left: 3rem;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  padding-top: 0.3rem;
+}
+
+.desktop-title {
+  text-align: left;
+}
+
+@media screen and (max-width: '800px') {
+  .desktop-title-text {
+    font-size: 20px;
+    text-align: center;
+  }
+}

@@ -1,101 +1,245 @@
 @import '~styles/color';
+@import '~styles/mixins';
+@import '~styles/typography';
 
 .container {
   display: flex;
   position: relative;
-  width: 70%;
-  height: 200px;
-  margin-bottom: 5rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
 
-  &.right {
-    flex-direction: row-reverse;
+  @include sm-and-up {
+    width: 90%;
+    height: unset;
+    margin-bottom: 5rem;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    &.right {
+      flex-direction: row-reverse;
+    }
+
+    &.both {
+      margin-top: 12rem;
+    }
   }
 
-  &.both {
-    margin-top: 3rem;
+  @include lg-and-up {
+    height: 200px;
   }
 }
 
 .image {
-  position: absolute;
+  @include sm-and-up {
+    position: relative;
+  }
 
-  &.highlight {
-    top: -170px;
+  @include lg-and-up {
+    position: absolute;
+    top: 0;
+
+    &.highlight {
+      top: -170px;
+    }
   }
 }
 
 .border {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 1;
-  border: 2px solid $primary;
-  width: 245px;
-  height: 395px;
+  display: none;
 
-  &.square {
-    height: 245px;
+  @include sm-and-up {
+    display: flex;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    border: 2px solid $border;
+    width: 245px;
+    height: 395px;
+
+    &.square {
+      height: 245px;
+    }
+
+    &.right {
+      left: unset;
+      right: 16px;
+    }
   }
+}
 
-  &.right {
-    left: unset;
-    right: 16px;
+.hr {
+  width: 40%;
+  margin-top: 1.5rem;
+
+  @include sm-and-up {
+    display: none;
   }
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 50%;
-  z-index: 2;
-  margin-left: 220px;
-  margin-top: 3rem;
+  width: 100%;
 
-  &.right {
-    margin-left: unset;
-    margin-right: 220px;
+  @include sm-and-up {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    margin-left: -2rem;
+    min-width: 300px;
+
+    &.right {
+      margin-left: 2rem;
+      margin-right: -2rem;
+    }
+
+    &.highlight {
+      width: 60%;
+    }
   }
 
-  &.highlight {
-    width: 60%;
+  @include lg-and-up {
+    width: 50%;
+    margin-left: 220px;
+    margin-top: 3rem;
+
+    &.right {
+      margin-left: 1rem;
+      margin-right: 220px;
+    }
+  }
+
+  @include xl {
+    width: 70%;
+    margin-top: 7rem;
   }
 }
 
 .title {
-  background-color: $accent;
-  padding: 8px 16px;
+  padding: 0px 2rem;
+  text-align: center;
+  line-height: 1rem;
 
   .header {
-    text-align: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    color: $primary;
+
+    @include sm-and-up {
+      font-size: 1.5rem;
+    }
+
+    @include xl {
+      line-height: normal;
+      font-size: 2rem;
+    }
+  }
+
+  @include sm-and-up {
+    background-color: $accent;
+    padding: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  @include lg-and-up {
+    display: flex;
+    justify-content: center;
+    white-space: unset;
+    overflow: unset;
+    text-overflow: unset;
+  }
+}
+
+.date {
+  text-align: center;
+
+  span {
+    font-size: 10px;
+    color: $secondary;
+
+    @include lg-and-up {
+      font-size: 1rem;
+    }
+  }
 }
 
 .summary {
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 3rem;
+  display: none;
 
-  .text {
-    width: 100%;
-    color: $secondary;
-    padding: 1rem;
+  p {
+    margin-top: 1rem;
   }
 
-  .expand {
-    font-style: normal;
-    font-size: 12px;
+  @include sm-and-up {
+    display: flex;
+    justify-content: flex-end;
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 4rem;
+
+      @supports (-webkit-line-clamp: 2) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .text {
+      width: 100%;
+      color: $secondary;
+    }
+
+    .expand {
+      font-style: normal;
+      font-size: 12px;
+      margin-left: 4rem;
+    }
+
+    &.right {
+      justify-content: flex-start;
+
+      p {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
+
+      .expand {
+        margin-left: 0;
+        margin-right: 3rem;
+      }
+    }
+
+    &.both {
+      padding-right: 2rem;
+    }
   }
 
-  &.right {
-    justify-content: flex-start;
-    margin-left: 0;
+  @include lg-and-up {
+    font-size: 1rem;
   }
 
-  &.both {
-    padding-right: 2rem;
+  @include xl {
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .expand {
+      font-size: 1rem;
+    }
   }
 }

@@ -6,33 +6,47 @@
   display: flex;
   padding: 1rem 2.5rem;
   background-color: $white;
-  z-index: 2;
+  z-index: 3;
+  position: relative;
 }
 
 .name {
-  flex: 1;
+  flex: 2;
   text-align: right;
   order: 2;
 
-  @include lg {
+  @include portrait {
+    order: 2;
+    text-align: center;
+  }
+
+  @include portrait-and-up {
     order: 1;
     text-align: left;
   }
 }
 
 .navigation {
-  flex: 3;
+  display: flex;
+  align-items: center;
+  flex: 1;
   order: 1;
 
-  @include lg {
+  @include portrait {
+    order: 1;
+  }
+
+  @include portrait-and-up {
+    flex: 4;
     order: 2;
+    justify-content: flex-end;
   }
 }
 
 .socials {
   display: none;
 
-  @include lg {
+  @include md-and-up {
     flex: 1;
     display: flex;
     justify-content: flex-end;

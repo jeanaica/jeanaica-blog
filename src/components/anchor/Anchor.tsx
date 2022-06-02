@@ -1,14 +1,14 @@
 import React, { FC, ReactElement, AnchorHTMLAttributes } from 'react';
 import classnames from 'classnames';
 
-import styles from './Link.module.scss';
+import styles from './Anchor.module.scss';
 
 type Props = {
   children: ReactElement | string;
   className?: string;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-const Link: FC<Props> = ({ className, children, ...rest }: Props) => (
+const Anchor: FC<Props> = ({ className, children, ...rest }: Props) => (
   <a
     // eslint-disable-next-line react/jsx-no-target-blank
     target="_blank"
@@ -21,4 +21,4 @@ const Link: FC<Props> = ({ className, children, ...rest }: Props) => (
   </a>
 );
 
-export default Link;
+export default Anchor;

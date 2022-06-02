@@ -9,7 +9,7 @@
   @include sm-and-up {
     padding: 12px;
 
-    &.normal {
+    &.small {
       width: 50%;
     }
   }
@@ -27,6 +27,10 @@
   @include sm-and-up {
     border: 2px solid $accent-dark;
     height: inherit;
+
+    .divider {
+      width: 70%;
+    }
   }
 
   .title {
@@ -34,7 +38,7 @@
   }
 
   .divider {
-    width: 70%;
+    width: 90%;
     border-color: $secondary;
     padding: 0;
     margin-bottom: 1rem;

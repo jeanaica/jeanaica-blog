@@ -1,9 +1,29 @@
 @import '~styles/color';
+@import '~styles/mixins';
 
 .section {
   background-color: $white;
   padding: 12px;
-  width: 60%;
+  min-width: 250px;
+}
+
+.title {
+  color: $accent-dark;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+
+  @include sm-and-up {
+    font-size: 2rem;
+  }
+
+  @include lg-and-up {
+    font-size: 40px;
+    line-height: 3.125rem;
+  }
 }
 
 .accent {
@@ -13,13 +33,30 @@
   margin-left: 3rem;
   background-color: $accent;
 
-  .title {
-    color: $accent-dark;
-  }
-
   .highlight {
     letter-spacing: 0;
     font-weight: 700;
     color: $accent-dark;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+
+    @include sm-and-up {
+      font-size: 2rem;
+      line-height: 3.125rem;
+    }
+
+    @include lg-and-up {
+      margin-top: 1rem;
+      font-size: 40px;
+      line-height: 3.125rem;
+    }
+  }
+
+  @include sm-and-up {
+    margin-top: 1rem;
   }
 }

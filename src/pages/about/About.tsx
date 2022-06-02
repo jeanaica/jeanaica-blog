@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import Image from 'components/image/Image';
 import Title from 'components/title/Title';
-import Link from 'components/link/Link';
+import Anchor from 'components/anchor/Anchor';
 
 import styles from './About.module.scss';
 
@@ -23,11 +23,11 @@ const About: FC = () => {
           <br />
           <p>
             Want someone to work on your website? Email her{' '}
-            <Link href="mailto:sjeanaica@gmail.com">here.</Link>
+            <Anchor href="mailto:sjeanaica@gmail.com">here.</Anchor>
           </p>
         </div>
       </Title>
-      <Image className={styles.profile} size="medium" src="profile.JPG" />
+      <Image className={styles.profile} src="profile.JPG" />
     </div>
   );
 };

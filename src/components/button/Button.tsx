@@ -12,6 +12,7 @@ type Props = {
   children?: ReactElement | string;
   onClick?: MouseEvent<HTMLButtonElement>;
   className?: string;
+  label?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<Props> = ({
@@ -19,6 +20,7 @@ const Button: FC<Props> = ({
   children,
   className,
   onClick,
+  label,
   ...rest
 }: Props) => (
   <button
@@ -29,7 +31,7 @@ const Button: FC<Props> = ({
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...rest}
   >
-    {children}
+    {!label ? children : label}
   </button>
 );
 

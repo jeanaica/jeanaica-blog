@@ -14,18 +14,21 @@ const Image: FC<Props> = ({
   src,
   className,
   alt = '',
-  size = 'medium',
+  size,
   ...rest
 }: Props) => (
   <div
-    className={classnames(className, styles.container, {
-      [styles.xl]: size === 'xl',
-      [styles.large]: size === 'large',
-      [styles.medium]: size === 'medium',
-      [styles.tall]: size === 'tall',
-      [styles.square]: size === 'square',
-    })}
-    // eslint-disable-next-line react/jsx-props-no-spreading
+    className={classnames(
+      styles.container,
+      {
+        [styles.xl]: size === 'xl',
+        [styles.large]: size === 'large',
+        [styles.medium]: size === 'medium',
+        [styles.tall]: size === 'tall',
+        [styles.square]: size === 'square',
+      },
+      className
+    )}
     {...rest}
   >
     <img src={src} alt={alt} className={styles.image} />

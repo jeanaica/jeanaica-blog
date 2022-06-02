@@ -1,0 +1,29 @@
+@import '~styles/color';
+
+.nav-dropdown {
+  position: absolute;
+  background-color: $white;
+  padding: 1rem;
+  z-index: 3;
+  box-shadow: 9px 9px 10px -10px $border;
+  top: 3.5rem;
+  left: 0;
+  min-width: 200px;
+  list-style-type: none;
+  text-align: center;
+  border-radius: 5px;
+
+  li {
+    border-bottom: 1px dashed #7f7f7f;
+    padding: 1rem;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+}
