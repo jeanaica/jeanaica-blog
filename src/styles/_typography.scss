@@ -1,3 +1,6 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
 @font-face {
   font-family: 'learning-curve';
   src: url('/fonts/learning-curve.ttf') format('truetype');
@@ -17,19 +20,36 @@ h5 {
   font-family: kazimir, sans-serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 40px;
+  font-size: 1rem;
   letter-spacing: 9px;
   line-height: 3.125rem;
   margin: 0;
+
+  @include sm-and-up {
+    font-size: 40px;
+  }
 }
 
 h6 {
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 40px;
+  font-size: 1rem;
   line-height: 2.5rem;
   margin: 0;
+
+  @include sm-and-up {
+    font-size: 40px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
 }
 
 body,
@@ -41,6 +61,15 @@ p {
   line-height: 2rem;
   letter-spacing: 0;
   margin: 0;
+  color: $secondary;
+}
+
+span {
+  font-family: brandon-grotesque, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 0.75rem;
+  color: $secondary;
 }
 
 .subtitle {
@@ -55,6 +84,7 @@ p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: $secondary;
 }
 
 button {
@@ -63,4 +93,19 @@ button {
   font-style: normal;
   font-size: 16px;
   line-height: 0.75rem;
+  color: $primary;
+}
+
+a {
+  font-family: brandon-grotesque, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 0.75rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $secondary;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

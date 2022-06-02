@@ -19,7 +19,7 @@
 }
 
 @mixin portrait {
-  @media (max-width: #{$screen-ipad-portrait}) {
+  @media only screen and (min-device-width: $screen-sm-min) and (max-width: #{$screen-ipad-portrait}) {
     @content;
   }
 }
@@ -38,6 +38,24 @@
 
 @mixin sm-and-up {
   @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+@mixin md-and-up {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin lg-and-up {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin portrait-and-up {
+  @media (min-width: #{$screen-ipad-portrait}) {
     @content;
   }
 }
