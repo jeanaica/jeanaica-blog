@@ -59,7 +59,9 @@
     "lint": "eslint . --ext .ts,tsx src",
     "format": "prettier --write src/**/*.{ts,tsx}",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy": "firebase deploy --only hosting"
+
   },
   "eslintConfig": {
     "extends": [
