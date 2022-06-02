@@ -19,12 +19,13 @@
     "max-len": [
       "error",
       {
-        "code": 80
+        "code": 120,
+        "ignoreStrings": true
       }
     ],
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
-    "react/prop-types": ["warn"],
+    "react/prop-types": "off",
     "no-return-assign": ["warn"],
     "react/require-default-props": "off",
     "import/no-extraneous-dependencies": [
@@ -33,6 +34,7 @@
         "devDependencies": true
       }
     ],
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-var-requires": 0,
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "off",
