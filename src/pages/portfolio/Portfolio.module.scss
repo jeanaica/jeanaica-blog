@@ -1,0 +1,52 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background-color: $accent-light;
+
+  @include md-and-up {
+    height: 50vh;
+  }
+  
+  .title {
+    background-color: transparent;
+    
+    @include sm-and-up {
+      background-color: white;
+      width: 50%;
+    }
+  }
+}
+
+.portfolio {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  .content {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+    @include md-and-up {
+      width: 80%;
+    }
+  }
+}
+
+.text {
+  color: $primary;
+}
+

@@ -125,10 +125,11 @@
   .header {
     font-family: brandon-grotesque, sans-serif;
     font-style: normal;
-    font-size: 12px;
+    font-size: 1.25rem;
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: capitalize;
+    line-height: 12px;
     color: $primary;
 
     @include sm-and-up {
@@ -205,7 +206,7 @@
 
     .expand {
       font-style: normal;
-      font-size: 12px;
+      font-size: 1rem;
       margin-left: 4rem;
     }
 

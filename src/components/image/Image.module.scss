@@ -2,6 +2,8 @@
 @import '~styles/mixins';
 
 .container {
+  background-color: $primary-9;
+  
   &.xl {
     width: 100%;
   }
@@ -32,6 +34,7 @@
   
   @include lg-and-up {
     object-fit: cover;
+    object-position: left;
   }
 
   @include xl {
