@@ -11,10 +11,12 @@ import Anchor from 'components/anchor/Anchor';
 
 import styles from './Footer.module.scss';
 
+const year = new Date().getFullYear();
+
 const Footer: FC = () => (
   <footer className={styles.footer}>
     <div className={styles.copyright}>
-      Copyright © 2020 Jeanaica Suplido. All Rights Reserved.
+      Copyright © {year} Jeanaica Suplido. All Rights Reserved.
     </div>
     <div className={styles.social}>
       <Anchor href="https://www.github.com/jeanaica" className={styles.link}>

@@ -29,4 +29,5 @@ Primary.args = {
   summary:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper.',
   date: 'April 1, 2022',
+  route: '/',
 };

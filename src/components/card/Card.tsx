@@ -10,42 +10,53 @@ import styles from './Card.module.scss';
 type Props = {
   title: string;
   summary: string;
+  href?: string;
   route?: string;
   img?: string;
   right?: boolean;
   highlight?: boolean;
   date?: string;
+  linkText?: string;
+  link?: string;
+  className?: string;
 };
 
 const Card: FC<Props> = ({
   title,
   summary,
-  route = '/',
+  href,
+  route,
   img = '/default-image.png',
   right,
   highlight,
   date,
+  linkText = 'Read more',
+  link,
+  className,
 }: Props) => {
   return (
     <div
-      className={classnames(styles.container, {
+      className={classnames(styles.container, className, {
         [styles.right]: right,
         [styles.both]: right && highlight,
       })}
     >
-      <div
-        className={classnames(styles.image, {
-          [styles.highlight]: right && highlight,
-        })}
-      >
-        <Image size={highlight ? 'tall' : 'square'} src={img} />
+      <Anchor href={link}>
         <div
-          className={classnames(styles.border, {
-            [styles.square]: !highlight,
-            [styles.right]: right,
+          className={classnames(styles.image, {
+            [styles.highlight]: right && highlight,
           })}
-        />
-      </div>
+        >
+          <Image size={highlight ? 'tall' : 'square'} src={img} />
+          <div
+            className={classnames(styles.border, {
+              [styles.square]: !highlight,
+              [styles.right]: right,
+            })}
+          />
+        </div>
+      </Anchor>
+
       <div
         className={classnames(styles.content, {
           [styles.right]: right,
@@ -54,9 +65,17 @@ const Card: FC<Props> = ({
       >
         <hr className={styles.hr} />
         <div className={styles.title}>
-          <Link className={styles.header} to={route}>
-            {title}
-          </Link>
+          {route && !href && (
+            <Link className={styles.header} to={route}>
+              {title}
+            </Link>
+          )}
+
+          {href && !route && (
+            <Anchor className={styles.header} href={href}>
+              {title}
+            </Anchor>
+          )}
         </div>
         <div className={styles.date}>
           <span>{date}</span>
@@ -70,8 +89,8 @@ const Card: FC<Props> = ({
         >
           <div className={styles.text}>
             <p className="subtitle">{summary}</p>
-            <Anchor href={route} className={styles.expand}>
-              Read more
+            <Anchor href={link || route} className={styles.expand}>
+              {linkText}
             </Anchor>
           </div>
         </div>
@@ -81,48 +100,3 @@ const Card: FC<Props> = ({
 };
 
 export default Card;
-
-/* <div
-className={classnames(styles.container, {
-  [styles.right]: right,
-  [styles.both]: right && highlight,
-})}
->
-<div
-  className={classnames(styles.image, {
-    [styles.highlight]: right && highlight,
-  })}
->
-  <Image size={highlight ? 'tall' : 'square'} src={img} />
-  <div
-    className={classnames(styles.border, {
-      [styles.square]: !highlight,
-      [styles.right]: right,
-    })}
-  />
-</div>
-<div
-  className={classnames(styles.content, {
-    [styles.right]: right,
-    [styles.highlight]: highlight,
-  })}
->
-  <div className={styles.title}>
-    <h1 className={styles.header}>{title}</h1>
-  </div>
-  <div
-    className={classnames(styles.summary, {
-      [styles.right]: right,
-      [styles.highlight]: highlight,
-      [styles.both]: right && highlight,
-    })}
-  >
-    <div className={styles.text}>
-      <p className="subtitle">{summary}</p>
-      <Anchor href={route} className={styles.expand}>
-        Read more
-      </Anchor>
-    </div>
-  </div>
-</div>
-</div> */
