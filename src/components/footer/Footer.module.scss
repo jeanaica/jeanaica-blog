@@ -4,6 +4,9 @@
 .footer {
   grid-area: footer;
   display: flex;
+  flex-direction: column;
+  width: 100%;
+
   background-color: $accent;
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -12,7 +15,6 @@
   line-height: 40px;
   color: $primary;
   padding: 1rem;
-  flex-direction: column;
 
   @include lg-and-up {
     flex-direction: row;

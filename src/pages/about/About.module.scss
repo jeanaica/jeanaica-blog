@@ -3,28 +3,27 @@
 
 .about {
   display: flex;
-  height: 100%;
   width: 100%;
   margin: 0;
   position: relative;
   justify-content: center;
   flex-direction: column;
+  height: 100%;
 
   @include portrait {
     width: 100%;
     margin: 0;
+    height: 100%;
   }
 
-  @include lg {
+  @include lg-and-up {
     margin: auto;
     width: 70%;
+    height: 100%;
   }
 
   @include xl {
     flex-direction: row;
-    // left: 10rem;
-    // // width: 40% !important;
-    // max-width: 500px;
   }
 }
 
@@ -38,6 +37,14 @@
     z-index: 2;
     position: absolute;
     top: 15%;
+    left: 3rem;
+    width: 50%;
+  }
+
+  @include portrait {
+    z-index: 2;
+    position: absolute;
+    top: 20%;
     left: 3rem;
     width: 50%;
   }
