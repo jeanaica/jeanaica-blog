@@ -28,8 +28,10 @@
 
   @include lg-and-up {
     height: 200px;
+    margin-right: -220px;
 
     &.right {
+      margin-right: 0;
       margin-left: -220px;
     }
   }
