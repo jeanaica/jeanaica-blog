@@ -10,13 +10,7 @@ import useDetectOutsideClick from 'hooks/useDetectOutsideClick/useDetectOutsideC
 import styles from './Nav.module.scss';
 import Dropdown from '../dropdown/Dropdown';
 
-type Props = {
-  onClick?(): void;
-  // showSideBar?: boolean;
-  headerRef?: RefObject<HTMLElement>;
-};
-
-const Nav: React.FC<Props> = ({ onClick, headerRef }) => {
+const Nav: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSideBar, setShowSideBar] = useState(false);
   const dropDownRef = useRef<HTMLUListElement>(null);
@@ -75,7 +69,9 @@ const Nav: React.FC<Props> = ({ onClick, headerRef }) => {
           </li> */}
         </ul>
       )}
-      {showSideBar && showMenu ? <Dropdown forwardRef={dropDownRef} /> : null}
+      {showSideBar && showMenu ? (
+        <Dropdown forwardRef={dropDownRef} onClick={() => setShowMenu(false)} />
+      ) : null}
     </nav>
   );
 };

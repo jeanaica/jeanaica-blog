@@ -28,8 +28,9 @@
     text-align: center;
     flex: 3;
     line-height: 16px;
+    margin-right: 2rem;
 
-    @include md {
+    @include md-and-up {
       margin-left: 1rem;
     }
 

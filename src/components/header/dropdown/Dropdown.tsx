@@ -1,29 +1,32 @@
-import React, { RefObject } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Dispatch, RefObject, SetStateAction } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import styles from './Dropdown.module.scss';
 
 type Props = {
   forwardRef: RefObject<HTMLUListElement>;
+  onClick(): void;
 };
 
-const Dropdown: React.FC<Props> = ({ forwardRef }) => {
-  return (
-    <ul className={styles['nav-dropdown']} ref={forwardRef}>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      {/* <li>
+const Dropdown: React.FC<Props> = ({ forwardRef, onClick }) => (
+  <ul className={styles['nav-dropdown']} ref={forwardRef}>
+    <li>
+      <Link to="/about" onClick={onClick}>
+        About
+      </Link>
+    </li>
+    {/* <li>
         <Link to="/blog">Blog</Link>
       </li> */}
-      <li>
-        <Link to="/portfolio">Portfolio</Link>
-      </li>
-      {/* <li>
+    <li>
+      <Link to="/portfolio" onClick={onClick}>
+        Portfolio
+      </Link>
+    </li>
+    {/* <li>
       <Link to="/contact">Contact</Link>
     </li> */}
-    </ul>
-  );
-};
+  </ul>
+);
 
 export default Dropdown;

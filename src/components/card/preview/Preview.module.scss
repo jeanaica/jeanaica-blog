@@ -1,0 +1,45 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.image {
+  @include sm-and-up {
+    position: relative;
+  }
+
+  @include lg-and-up {
+    position: absolute;
+    top: 0;
+
+    &.highlight {
+      top: -170px;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+}
+
+.border {
+  display: none;
+
+  @include sm-and-up {
+    display: flex;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    border: 2px solid $border;
+    width: 245px;
+    height: 395px;
+
+    &.square {
+      height: 245px;
+    }
+
+    &.right {
+      left: unset;
+      right: 16px;
+    }
+  }
+}

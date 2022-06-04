@@ -1,0 +1,47 @@
+@import '~styles/color';
+@import '~styles/mixins';
+@import '~styles/typography';
+
+.title {
+  padding: 0px 2rem;
+  text-align: center;
+  line-height: 1rem;
+  margin-top: 2rem;
+  
+  .header {
+    font-family: brandon-grotesque, sans-serif;
+    font-style: normal;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    line-height: 12px;
+    color: $primary;
+  
+    @include sm-and-up {
+      font-size: 1.5rem;
+    }
+  
+    @include xl {
+      line-height: normal;
+      font-size: 2rem;
+    }
+  }
+  
+  @include sm-and-up {
+    background-color: $accent;
+    padding: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0;
+  }
+  
+  @include lg-and-up {
+    display: flex;
+    justify-content: center;
+    white-space: unset;
+    overflow: unset;
+    text-overflow: unset;
+  }
+}

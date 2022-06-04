@@ -1,0 +1,63 @@
+@import '~styles/color';
+@import '~styles/mixins';
+
+.content {
+  width: 100%;
+
+  @include sm-and-up {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    margin-left: -2rem;
+    min-width: 300px;
+
+    &.right {
+      margin-left: 2rem;
+      margin-right: -2rem;
+    }
+
+    &.highlight {
+      width: 60%;
+    }
+  }
+
+  @include lg-and-up {
+    width: 50%;
+    margin-left: 220px;
+    margin-top: 3rem;
+
+    &.right {
+      margin-left: 1rem;
+      margin-right: 220px;
+    }
+  }
+
+  @include xl {
+    width: 70%;
+    margin-top: 7rem;
+  }
+}
+
+.date {
+  text-align: center;
+
+  span {
+    font-size: 10px;
+    color: $secondary;
+
+    @include lg-and-up {
+      font-size: 1rem;
+    }
+  }
+}
+
+.hr {
+  width: 40%;
+  margin-bottom: 1.5rem;
+
+  @include sm-and-up {
+    display: none;
+  }
+}
+
