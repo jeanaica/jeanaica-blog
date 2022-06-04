@@ -1,8 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
-
 import firebaseConfig from 'config/firebase';
+import { initializeApp } from 'firebase/app';
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
+import { getFirestore } from 'firebase/firestore';
 
 const firebase = initializeApp(firebaseConfig);
 

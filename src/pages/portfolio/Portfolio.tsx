@@ -2,16 +2,16 @@ import React, { FC } from 'react';
 
 import Title from 'components/title/Title';
 
-import styles from './Portfolio.module.scss';
 import ProjectCard from './projectCard/ProjectCard';
+
+import styles from './Portfolio.module.scss';
 
 const Portfolio: FC = () => {
   const projects = [
     {
       title: 'Gallery',
       img: 'gallery.png',
-      text:
-        'Photo gallery with add and delete functionality using ReactJS and Tailwind CSS',
+      text: 'Photo gallery with add and delete functionality using ReactJS and Tailwind CSS',
       link: 'https://github.com/jeanaica/gallery',
       href: 'https://sample-gallery.jeanaica.com',
     },
@@ -25,8 +25,7 @@ const Portfolio: FC = () => {
     {
       title: 'Cat Directory',
       img: 'crud.png',
-      text:
-        'CRUD Application of Cats using Firebase, Tailwind CSS, and ReactJS',
+      text: 'CRUD Application of Cats using Firebase, Tailwind CSS, and ReactJS',
       link: 'https://github.com/jeanaica/meow-crud',
       href: 'https://crud.jeanaica.com',
     },
@@ -37,8 +36,8 @@ const Portfolio: FC = () => {
       <div className={styles.header}>
         <Title
           className={styles.title}
-          header="Portfolio"
-          subText="Study. Code. Repeat."
+          header='Portfolio'
+          subText='Study. Code. Repeat.'
         />
       </div>
       <div className={styles.content}>

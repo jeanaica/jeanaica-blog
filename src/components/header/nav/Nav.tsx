@@ -1,14 +1,14 @@
-import React, { RefObject, useEffect, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import classnames from 'classnames';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import useWindowDimensions from 'hooks/useWindowDimensions/useWindowDimensions';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classnames from 'classnames';
 import useDetectOutsideClick from 'hooks/useDetectOutsideClick/useDetectOutsideClick';
+import useWindowDimensions from 'hooks/useWindowDimensions/useWindowDimensions';
+
+import Dropdown from '../dropdown/Dropdown';
 
 import styles from './Nav.module.scss';
-import Dropdown from '../dropdown/Dropdown';
 
 const Nav: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -45,8 +45,7 @@ const Nav: React.FC = () => {
     <nav
       className={classnames(styles.nav, {
         [styles.desktop]: !showSideBar,
-      })}
-    >
+      })}>
       {showSideBar ? (
         <FontAwesomeIcon
           icon={faBars}
@@ -56,21 +55,18 @@ const Nav: React.FC = () => {
       ) : (
         <ul className={styles['nav-menu']}>
           <li>
-            <Link to="/about">About</Link>
+            <Link to='/about'>About</Link>
           </li>
-          {/* <li>
-            <Link to="/blog">Blog</Link>
-          </li> */}
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to='/portfolio'>Portfolio</Link>
           </li>
-          {/* <li>
-            <Link to="/contact">Contact</Link>
-          </li> */}
         </ul>
       )}
       {showSideBar && showMenu ? (
-        <Dropdown forwardRef={dropDownRef} onClick={() => setShowMenu(false)} />
+        <Dropdown
+          forwardRef={dropDownRef}
+          onClick={() => setShowMenu(false)}
+        />
       ) : null}
     </nav>
   );

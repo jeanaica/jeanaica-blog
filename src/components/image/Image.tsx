@@ -29,9 +29,12 @@ const Image: FC<Props> = ({
       },
       className
     )}
-    {...rest}
-  >
-    <img src={src} alt={alt} className={styles.image} />
+    {...rest}>
+    <img
+      src={src}
+      alt={alt}
+      className={styles.image}
+    />
   </div>
 );
 

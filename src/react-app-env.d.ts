@@ -1,4 +1,4 @@
-/// <reference types="react-scripts" />
+// <reference types="react-scripts" />
 
 declare module '*.scss' {
   const content: { [className: string]: string };

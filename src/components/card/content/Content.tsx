@@ -22,8 +22,7 @@ const Content: FC<Props> = ({
     className={classnames(styles.content, className, {
       [styles.right]: right,
       [styles.highlight]: highlight,
-    })}
-  >
+    })}>
     {children}
     <hr className={styles.hr} />
     <div className={styles.date}>

@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes, ReactElement } from 'react';
 import classnames from 'classnames';
 
 import styles from './Title.module.scss';
@@ -25,8 +25,7 @@ const Title: FC<Props> = ({
       [styles.small]: size === 'small',
     })}
     // eslint-disable-next-line react/jsx-props-no-spreading
-    {...rest}
-  >
+    {...rest}>
     <div className={styles.content}>
       <h5 className={styles.title}>{header}</h5>
       <hr className={styles.divider} />

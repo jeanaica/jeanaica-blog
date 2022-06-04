@@ -1,15 +1,17 @@
 import React, { FC } from 'react';
 
+import Anchor from 'components/anchor/Anchor';
 import Image from 'components/image/Image';
 import Title from 'components/title/Title';
-import Anchor from 'components/anchor/Anchor';
 
 import styles from './About.module.scss';
 
 const About: FC = () => {
   return (
     <div className={styles.about}>
-      <Title className={styles.content} header="About">
+      <Title
+        className={styles.content}
+        header='About'>
         <div className={styles.text}>
           <p>
             Jeanaica Suplido is a Frontend Software Engineer which specializes
@@ -23,11 +25,14 @@ const About: FC = () => {
           <br />
           <p>
             Want someone to work on your website? Email her{' '}
-            <Anchor href="mailto:sjeanaica@gmail.com">here.</Anchor>
+            <Anchor href='mailto:sjeanaica@gmail.com'>here.</Anchor>
           </p>
         </div>
       </Title>
-      <Image className={styles.profile} src="profile.JPG" />
+      <Image
+        className={styles.profile}
+        src='profile.JPG'
+      />
     </div>
   );
 };

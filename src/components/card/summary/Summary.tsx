@@ -25,11 +25,12 @@ const Summary: FC<Props> = ({
       [styles.right]: right,
       [styles.highlight]: highlight,
       [styles.both]: right && highlight,
-    })}
-  >
+    })}>
     <div className={styles.text}>
-      <p className="subtitle">{text}</p>
-      <Anchor href={link} className={styles.expand}>
+      <p className='subtitle'>{text}</p>
+      <Anchor
+        href={link}
+        className={styles.expand}>
         {linkText}
       </Anchor>
     </div>

@@ -1,7 +1,7 @@
 import React, {
-  MouseEvent,
   ButtonHTMLAttributes,
   FC,
+  MouseEvent,
   ReactElement,
 } from 'react';
 import classnames from 'classnames';
@@ -29,8 +29,7 @@ const Button: FC<Props> = ({
     className={classnames(className, styles.button)}
     onClick={onClick}
     // eslint-disable-next-line react/jsx-props-no-spreading
-    {...rest}
-  >
+    {...rest}>
     {!label ? children : label}
   </button>
 );

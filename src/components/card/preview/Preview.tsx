@@ -32,11 +32,13 @@ const Preview: FC<Props> = ({
         [styles.highlight]: right && highlight,
         [styles.button]: href,
       })}
-      role="button"
+      role='button'
       onClick={handleImageClick}
-      aria-hidden="true"
-    >
-      <Image size={highlight ? 'tall' : 'square'} src={img} />
+      aria-hidden='true'>
+      <Image
+        size={highlight ? 'tall' : 'square'}
+        src={img}
+      />
 
       <div
         className={classnames(styles.border, {

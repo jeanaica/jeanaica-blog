@@ -1,22 +1,19 @@
-import React, { FC, ReactElement, AnchorHTMLAttributes } from 'react';
+import React, { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 import classnames from 'classnames';
 
 import styles from './Anchor.module.scss';
 
 type Props = {
-  children: ReactElement | string;
+  children: ReactNode | string;
   className?: string;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const Anchor: FC<Props> = ({ className, children, ...rest }: Props) => (
   <a
-    // eslint-disable-next-line react/jsx-no-target-blank
-    target="_blank"
-    // eslint-disable-next-line react/jsx-props-no-spreading
+    target='_blank'
     {...rest}
     className={classnames(className, styles.link)}
-    rel="noreferrer noopener"
-  >
+    rel='noreferrer noopener'>
     {children}
   </a>
 );

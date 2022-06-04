@@ -1,9 +1,5 @@
 import React, { FC, ReactNode } from 'react';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
-
-import Image from 'components/image/Image';
-import Anchor from 'components/anchor/Anchor';
 
 import styles from './Card.module.scss';
 
@@ -20,8 +16,7 @@ const Card: FC<Props> = ({ right, highlight, className, children }) => {
       className={classnames(styles.container, className, {
         [styles.right]: right,
         [styles.both]: right && highlight,
-      })}
-    >
+      })}>
       {children}
     </div>
   );
