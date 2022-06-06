@@ -23,6 +23,13 @@ const Portfolio: FC = () => {
       href: 'https://gql-epoch.jeanaica.com',
     },
     {
+      title: 'Employee Directory',
+      img: 'directory.png',
+      text: 'Data Grid using ReactJS, React Hook Form, and Material UI',
+      link: 'https://github.com/jeanaica/directory',
+      href: 'https://directory-a5c26.jeanaica.com',
+    },
+    {
       title: 'Cat Directory',
       img: 'crud.png',
       text: 'CRUD Application of Cats using Firebase, Tailwind CSS, and ReactJS',
